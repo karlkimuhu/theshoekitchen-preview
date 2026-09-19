@@ -13,12 +13,12 @@
 :root, [data-theme="dark"] {
   --bg: #120B33; --surface: #1D1550; --tile: #261D5E; --line: #342A73;
   --text: #F4F1FF; --muted: #ADA5D6; --primary: #FF3DBB; --on-primary: #120B33;
-  --accent: #3DF2FF; --link: #3DF2FF; --wa: #25D366;
+  --accent: #3DF2FF; --link: #3DF2FF; --wa: #25D366; --hero-mid: #3DF2FF;
 }
 [data-theme="light"] {
   --bg: #F5F3FF; --surface: #FFFFFF; --tile: #ECE8FF; --line: #DED8F7;
   --text: #150E3A; --muted: #5A5382; --primary: #C8107F; --on-primary: #FFFFFF;
-  --accent: #C8107F; --link: #C8107F; --wa: #1FAF55;
+  --accent: #C8107F; --link: #C8107F; --wa: #1FAF55; --hero-mid: #5A5382;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
@@ -45,14 +45,14 @@ header { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bo
 
 .hero { padding-top: 36px; padding-bottom: 28px; display: grid; gap: 24px; align-items: center; }
 .hero h1 { margin: 0; font-size: clamp(96px, 29vw, 170px); line-height: .86; }
-.hero h1 .l2 { display: block; color: transparent; -webkit-text-stroke: 3px var(--primary); text-stroke: 3px var(--primary); }
+.hero h1 .l2 { display: block; color: var(--hero-mid); }
 .hero h1 .l3 { display: block; color: var(--primary); }
 .hero p { margin: 16px 0 0; color: var(--muted); font-size: 17px; max-width: 34ch; }
 .hero-photos { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
 .hero-photos img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 8px; background: var(--tile); }
 .hero-photos img:nth-child(2) { transform: translateY(-18px); }
 .cta { font-stretch: 112%; text-transform: none; display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 14px 22px; border: 0; border-radius: 6px; background: var(--primary); color: var(--on-primary); font-weight: 700; font-size: 16px; }
-@media (min-width: 820px) { .hero { grid-template-columns: 1.1fr 1fr; padding-top: 56px; padding-bottom: 40px; } }
+@media (min-width: 820px) { .hero { grid-template-columns: 1.1fr 1fr; padding-top: 56px; padding-bottom: 40px; } .hero h1 { font-size: clamp(96px, 9vw, 132px); } }
 
 .perks { display: flex; flex-wrap: wrap; gap: 8px 20px; padding-top: 14px; padding-bottom: 14px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 14px; font-weight: 500; }
 .perks b { color: var(--text); font-weight: 600; }
